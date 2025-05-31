@@ -43,6 +43,30 @@ class ChinesePairTypedHandler(
             return
         }
 
+        // ---- 中文单引号特殊处理 ----
+        if (singleQuoteSet.contains(charTyped)) {
+            val textAfter = if (offset < document.textLength) document.charsSequence[offset] else null
+            // 若光标后已是右单引号’，则跳过
+            if (textAfter == '’') {
+                caretModel.moveToOffset(offset + 1)
+                return
+            }
+            if (selectionModel.hasSelection()) {
+                // 选区包裹
+                val selStart = selectionModel.selectionStart
+                val selEnd = selectionModel.selectionEnd
+                val selectedText = document.getText(TextRange(selStart, selEnd))
+                document.replaceString(selStart, selEnd, "‘$selectedText’")
+                selectionModel.setSelection(selStart + 1, selStart + 1 + selectedText.length)
+                caretModel.moveToOffset(selStart + 1 + selectedText.length)
+            } else {
+                // 插入‘’并光标居中
+                document.insertString(offset, "‘’")
+                caretModel.moveToOffset(offset + 1)
+            }
+            return
+        }
+
         // 2. 其他符号：左符号配对，右符号跳过
         if (ChineseQuotePairs.pairs.containsKey(charTyped)) {
             val rightChar = ChineseQuotePairs.pairs[charTyped]!!
