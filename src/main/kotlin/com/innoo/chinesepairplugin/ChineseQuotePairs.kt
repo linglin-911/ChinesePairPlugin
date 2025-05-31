@@ -22,4 +22,7 @@ object ChineseQuotePairs {
     val rights: Set<Char> = pairs.values.toSet()
     // 右->左的反向查找
     val rightToLeft: Map<Char, Char> = pairs.entries.associate { it.value to it.key }
+    /** 特殊：双引号、单引号都视为左引号 */
+    val doubleQuoteSet = setOf('“', '”')
+    val singleQuoteSet = setOf('‘', '’')
 }
