@@ -1,4 +1,4 @@
-package com.innoo.chinesepairplugin
+package com.innoo.chinesesymbolpair
 
 object ChineseQuotePairs {
     // 配对符号集合（左->右）

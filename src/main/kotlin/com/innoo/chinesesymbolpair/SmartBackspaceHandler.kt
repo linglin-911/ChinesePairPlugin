@@ -1,4 +1,4 @@
-package com.innoo.chinesepairplugin
+package com.innoo.chinesesymbolpair
 
 import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.editor.Editor

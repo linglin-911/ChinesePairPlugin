@@ -1,11 +1,11 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
-    <id>com.innoo.ChinesePairPlugin</id>
+    <id>com.innoo.ChineseSymbolPair</id>
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>ChinesePairPlugin</name>
+    <name>ChineseSymbolPair</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="l983033289@gmail.com" >Innoo</vendor>
@@ -14,9 +14,15 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description>
-        中文符号配对插件。
-        中文符号输入配对、选区包裹、智能退格。
-        支持常见中文符号，如'《'，'【'，'“'等。
+        <![CDATA[
+        <p>A plugin for enhanced Chinese punctuation input.</p>
+        <p>Features include auto-pairing, selection wrapping, and intelligent backspacing for Chinese symbols.</p>
+        <p>Compatible with common Chinese symbols such as '《', '【', '“', '’', and more.</p>
+
+        <p>中文符号配对插件。</p>
+        <p>中文符号输入配对、选区包裹、智能退格。</p>
+        <p>支持常见中文符号，如'《'，'【'，'“','’'等。</p>
+]]>
     </description>
 
     <!-- Product and plugin compatibility requirements.
@@ -26,6 +32,6 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <postStartupActivity implementation="com.innoo.chinesepairplugin.ChinesePairStartupActivity"/>
+        <postStartupActivity implementation="com.innoo.chinesesymbolpair.ChinesePairStartupActivity"/>
     </extensions>
 </idea-plugin>

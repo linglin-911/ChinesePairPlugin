@@ -1,4 +1,4 @@
-package com.innoo.chinesepairplugin
+package com.innoo.chinesesymbolpair
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.StartupActivity
