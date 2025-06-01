@@ -1,42 +1,40 @@
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+# ========== IntelliJ IDEA ==========
+.idea/                       # IDE 配置目录（除非你需要共享 code styles）
+*.iml                        # IntelliJ 模块文件
 *.iws
-*.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# 运行配置
+.run/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# ========== Gradle ==========
+.gradle/                     # Gradle 缓存目录
+build/                      # 构建产物目录
+out/                        # 一些项目也可能使用该目录
 
-### VS Code ###
-.vscode/
+# ========== Kotlin/Java ==========
+*.class                      # 编译后文件
+*.jar
+*.war
+*.ear
 
-### Mac OS ###
-.DS_Store
+# ========== Logs ==========
+*.log
+
+# ========== OS / 工具生成 ==========
+.DS_Store                    # macOS
+Thumbs.db                   # Windows
+*.swp                        # Vim 临时文件
+*.bak
+*.tmp
+
+# ========== 可选忽略 ==========
+# 如果你使用了特定配置文件保存私密变量，也应忽略：
+# local.properties
+# *.env
+# secrets.properties
+
+# ========== 覆盖策略提示 ==========
+# 如果你想保留部分 .idea 子目录，可以这样例外设置：
+# !.idea/codeStyles/
+# !.idea/inspectionProfiles/
